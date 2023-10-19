@@ -1,9 +1,10 @@
+import HomeBanner from "./HomeBanner";
 
 
 const Home = () => {
     return (
         <div>
-            <h2>Home Page</h2>
+            <HomeBanner/>
             
         </div>
     );

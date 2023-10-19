@@ -18,7 +18,7 @@ const MainRoute = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/add-products",
+        path: "/add-product",
         element: <AddProduct />,
       },
       {
@@ -26,11 +26,11 @@ const MainRoute = createBrowserRouter([
         element: <MyCart/>,
       },
       {
-        path: "/login",
+        path: "/sign-in",
         element: <Login/>,
       },
       {
-        path: "/register",
+        path: "/sign-up",
         element: <Register/>,
       },
     ],

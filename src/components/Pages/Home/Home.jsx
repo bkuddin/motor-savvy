@@ -1,3 +1,4 @@
+import BestServices from "./BestServices";
 import CarBrand from "./CarBrand";
 import HomeBanner from "./HomeBanner";
 import HowWork from "./HowWork";
@@ -9,6 +10,7 @@ const Home = () => {
             <HomeBanner/>
             <CarBrand></CarBrand>
             <HowWork></HowWork>
+            <BestServices></BestServices>
             
         </div>
     );

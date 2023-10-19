@@ -1,13 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css";
 
 export const Navbar = () => {
+  // State for Mobile Menu Open & Close 
   const [menuOpen, setMenuOpen] = useState(false);
+  // State for Change nav color when Scroll Down
+  const [color, setColor] = useState("transparent");
+  const [textColor, setTextColor] = useState('black')
+
+  useEffect(()=>{
+    const changeColor = ()=>{
+      if(window.scrollY >= 90){
+        setColor("#ea580c");
+        setTextColor('white')
+      }else{
+        setColor("transparent")
+        setTextColor('black')
+      }
+    }
+    window.addEventListener("scroll", changeColor);
+  },[])
 
   return (
-    <nav className="fixed left-0 top-0 w-full z-10 text-white font-bold ease-in duration-300 px-20">
+    <nav style={{backgroundColor: `${color}`, color: `${textColor}`}} className="fixed left-0 top-0 w-full z-10  font-bold ease-in duration-300 px-20">
       <Link to="/" className="title">
         Website
       </Link>

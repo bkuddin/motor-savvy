@@ -24,7 +24,7 @@ const HomeBanner = () => {
                 expert advice on maintenance, repairs, and industry trends. Your
                 go-to source for mastering all things automotive.
               </p>
-              <div className="md:flex md:space-x-4 space-y-4  ">
+              <div className="md:flex md:space-x-4 md:space-y-0 space-y-4  ">
                 <button className='bg-white px-10 py-3 shadow-lg rounded-2xl'>
                    <img className='w-[120px]'  src={appleStore} alt="" />
                 </button>

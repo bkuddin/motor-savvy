@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.app-bg {
+  background-image: url("https://i.ibb.co/LvN1pMS/app-bg.jpg");
+  background-size: cover;
+  background-position: right;
+}

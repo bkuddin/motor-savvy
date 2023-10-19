@@ -8,23 +8,23 @@ export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   // State for Change nav color when Scroll Down
   const [color, setColor] = useState("transparent");
-  const [textColor, setTextColor] = useState('black')
+  
 
   useEffect(()=>{
     const changeColor = ()=>{
       if(window.scrollY >= 90){
-        setColor("#ea580c");
-        setTextColor('white')
+        setColor("#F2F2F2");
+       
       }else{
         setColor("transparent")
-        setTextColor('black')
+       
       }
     }
     window.addEventListener("scroll", changeColor);
   },[])
 
   return (
-    <nav style={{backgroundColor: `${color}`, color: `${textColor}`}} className="fixed left-0 top-0 w-full z-10  font-bold ease-in duration-300 px-20">
+    <nav style={{backgroundColor: `${color}`}} className="fixed left-0 top-0 w-full z-10   font-bold ease-in duration-300 px-20">
       <Link to="/" className="title">
         Website
       </Link>
@@ -49,8 +49,8 @@ export const Navbar = () => {
         <li>
           <NavLink to="/sign-up">Sign Up</NavLink>
         </li>
-        <li className="bg-[#2B1B9A] rounded-lg ">
-          <NavLink className="text-white" to="/sign-in">Sign In</NavLink>
+        <li className="bg-[#2B1B9A] rounded-lg  ">
+          <NavLink className="text-white " to="/sign-in">Sign In</NavLink>
         </li>
       </ul>
     </nav>

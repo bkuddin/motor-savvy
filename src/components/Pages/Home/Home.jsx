@@ -1,5 +1,6 @@
 import CarBrand from "./CarBrand";
 import HomeBanner from "./HomeBanner";
+import HowWork from "./HowWork";
 
 
 const Home = () => {
@@ -7,6 +8,7 @@ const Home = () => {
         <div>
             <HomeBanner/>
             <CarBrand></CarBrand>
+            <HowWork></HowWork>
             
         </div>
     );

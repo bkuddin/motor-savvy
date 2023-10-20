@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import logo from '../../../assets/images/motor-savvy-black.png';
 
 import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css";
@@ -25,8 +26,9 @@ export const Navbar = () => {
 
   return (
     <nav style={{backgroundColor: `${color}`}} className="fixed left-0 top-0 w-full z-10   font-bold ease-in duration-300 px-20">
-      <Link to="/" className="title">
-        Website
+      <Link to="/" className="title flex items-center">
+         <img className="w-1/4" src={logo} alt="" />
+         <p className="text-black">Motor Savvy</p>
       </Link>
       <div className="menu mr-5" onClick={() => setMenuOpen(!menuOpen)}>
         <span></span>

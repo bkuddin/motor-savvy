@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Brands = () => {
   const [brands, setBrands] = useState([]);
@@ -14,18 +15,19 @@ const Brands = () => {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 justify-between items-center px-20">
           {brands.map((brand) => (
             <div key={brand.id}>
-              <div className="card w-full bg-base-100 hover:shadow-2xl border-2 border-gray-100 hover:border-2 hover:border-[#ea580c]">
-                <div className="card-body bg-gray-100 rounded-t-2xl">
-                  <h2 className="card-title">{brand.brand_name}</h2>
-          
-                </div>
-                <figure>
-                  <img
-                    src={brand.brand_img}
-                    alt={brand.brand_name}
-                  />
-                </figure>
-              </div>
+              <Link to={`/brand-products/${brand.brand_name}`}>
+                  <div className="card w-full bg-base-100 hover:shadow-2xl border-2 border-gray-100 hover:border-2 hover:border-[#ea580c]">
+                    <div className="card-body bg-gray-100 rounded-t-2xl">
+                      <h2 className="card-title">{brand.brand_name}</h2>
+                    </div>
+                    <figure>
+                      <img
+                        src={brand.brand_img}
+                        alt={brand.brand_name}
+                      />
+                    </figure>
+                  </div>
+              </Link>
             </div>
           ))}
       </div>

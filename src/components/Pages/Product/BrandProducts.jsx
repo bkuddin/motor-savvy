@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
+import Rating from "./Rating";
 
 const BrandProducts = () => {
   const [productBrand, setProductBrand] = useState([]);
@@ -48,14 +49,21 @@ const BrandProducts = () => {
           <div key={product._id}>
             <div className="card w-full bg-base-100 shadow-xl">
               <figure>
-                <img src={product.image} alt="Shoes" />
+                <img src={product.image} alt="" />
               </figure>
               <div className="card-body">
-                <h2 className="card-title">{product.brand}</h2>
+                <h2 className="card-title text-xl font-bold">{product.brand}</h2>
+                <h4><span className="font-semibold">Model:</span> {product.model}</h4>
+                <div className="flex justify-between">
+                  <p><span className="font-semibold">Price: $</span>{product.price}</p>
+                  <Rating rating={product.rating}></Rating>
+                  
+                </div>
+               
                 <p>{product.description}</p>
                 <div className="card-actions justify-end">
-                  <button className="btn btn-primary">Details</button>
-                  <button className="btn btn-primary">Update</button>
+                  <Link ><button className="btn btn-primary">Details</button></Link>
+                  <Link to={`/product-update/${product._id}`}><button className="btn btn-primary">Update</button></Link>
                 </div>
               </div>
             </div>

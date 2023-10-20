@@ -62,7 +62,7 @@ const BrandProducts = () => {
                
                 <p>{product.description}</p>
                 <div className="card-actions justify-end">
-                  <Link ><button className="btn btn-primary">Details</button></Link>
+                  <Link to={`/product-details/${product._id}`} ><button className="btn btn-primary">Details</button></Link>
                   <Link to={`/product-update/${product._id}`}><button className="btn btn-primary">Update</button></Link>
                 </div>
               </div>

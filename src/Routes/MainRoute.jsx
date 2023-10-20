@@ -8,6 +8,7 @@ import Home from "../components/Pages/Home/Home";
 import AddProduct from "../components/Pages/Product/AddProduct";
 import BrandProductUpdate from "../components/Pages/Product/BrandProductUpdate";
 import BrandProducts from "../components/Pages/Product/BrandProducts";
+import ProductDetails from "../components/Pages/Product/ProductDetails";
 
 
 const MainRoute = createBrowserRouter([
@@ -35,8 +36,14 @@ const MainRoute = createBrowserRouter([
         loader: ({params})=> fetch(`http://localhost:5000/cars/${params.id}`)
       },
       {
+        path: "/product-details/:id",
+        element: <ProductDetails/>,
+        loader: ()=> fetch('http://localhost:5000/cars')
+      },
+      {
         path: "/cart",
         element: <MyCart/>,
+        loader: ()=> fetch('http://localhost:5000/users')
       },
       {
         path: "/sign-in",

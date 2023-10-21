@@ -25,31 +25,56 @@ const KnowYourWorth = () => {
         </p>
       </div>
 
-      <div style={{display: 'flex', justifyContent: 'center'}} className="grid grid-cols-1 md:grid-cols-12 items-center my-24">
-        <div className="col-span-3">
-          <div className="w-[100px] h-[100px] mb-4 rounded-lg border-4 border-white shadow-lg bg-[#F2F2F2] p-7 flex items-center ">
-             <BsCarFrontFill/>
+      <div style={{display: 'flex', justifyContent: 'center'}} className="grid grid-cols-1 md:grid-cols-12 items-center my-24 md:ml-36">
+        {/* 3 Span Left */}
+        <div className="col-span-3 space-y-32">
+          <div>
+            <div className="w-[100px] h-[100px] mb-4 rounded-lg border-4 border-white shadow-lg bg-[#F2F2F2] p-7 flex justify-center items-center  ">
+               <BsCarFrontFill className="text-2xl text-[#ea580c] "/>
+            </div>
+            <p>Your Choice Of <br /> Mechanic</p>
           </div>
-          <div className="w-[100px] h-[100px] mb-4 rounded-lg border-4 border-white shadow-lg bg-[#F2F2F2] p-7 flex items-center ">
-            <AiOutlineDollarCircle/>
+          <div>
+            <div className="w-[100px] h-[100px] mb-4 rounded-lg border-4 border-white shadow-lg bg-[#F2F2F2] p-7 flex justify-center items-center  md:-ml-20 ">
+              <AiOutlineDollarCircle className="text-2xl text-[#ea580c]"/>
+            </div>
+            <p className="md:-ml-20">Easier Car on <br /> Your Budget</p>
           </div>
-          <div className="w-[100px] h-[100px] mb-4 rounded-lg border-4 border-white shadow-lg bg-[#F2F2F2] p-7 flex items-center ">
-            <BiSupport/>
+          <div>
+            <div className="w-[100px] h-[100px] mb-4 rounded-lg border-4 border-white shadow-lg bg-[#F2F2F2] p-7 flex justify-center items-center ">
+              <BiSupport className="text-2xl text-[#ea580c] "/>
+            </div>
+            <p>Support 24/7</p>
           </div>
           
         </div>
-        <div className="col-span-6">
+        {/* 6 Span */}
+        <div className="col-span-6 ">
           <img className="" src={carTop} alt="" />
         </div>
-        <div className="col-span-3">
-          <div className="w-[100px] h-[100px] mb-4 rounded-lg border-4 border-white shadow-lg bg-[#F2F2F2] p-7 flex items-center ">
-           <SlBadge/>
+
+        {/* 3 Span Right */}
+        <div className="col-span-3 space-y-32">
+          <div>
+            <div className="w-[100px] h-[100px] mb-4 rounded-lg border-4 border-white shadow-lg bg-[#F2F2F2] p-7 flex justify-center items-center ">
+             <SlBadge className="text-2xl text-[#ea580c] "/>
+            </div>
+            <p>The Best Extended <br /> Auto Warranties </p>
           </div>
-          <div className="w-[100px] h-[100px] mb-4 rounded-lg border-4 border-white shadow-lg bg-[#F2F2F2] p-7 flex items-center ">
-            <SiEasyeda/>
+          <div>
+            <div>
+              <div className="w-[100px] h-[100px] mb-4 rounded-lg border-4 border-white shadow-lg bg-[#F2F2F2] p-7 flex justify-center items-center md:ml-20  ">
+                <SiEasyeda className="text-2xl text-[#ea580c]"/>
+              </div>
+              <p className="md:ml-20">Most Flesible Payment Plans<br /> Payment Plans </p>
+            </div>
+
           </div>
-          <div className="w-[100px] h-[100px] mb-4 rounded-lg border-4 border-white shadow-lg bg-[#F2F2F2] p-7 flex items-center ">
-            <ImPriceTags/>
+          <div>
+            <div className="w-[100px] h-[100px] mb-4 rounded-lg border-4 border-white shadow-lg bg-[#F2F2F2] p-7 flex justify-center items-center  ">
+              <ImPriceTags className="text-2xl text-[#ea580c]"/>
+            </div>
+            <p>Competitive Pricing</p>
           </div>
           
         </div>

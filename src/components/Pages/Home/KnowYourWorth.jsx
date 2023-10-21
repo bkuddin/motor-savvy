@@ -27,7 +27,7 @@ const KnowYourWorth = () => {
 
       <div style={{display: 'flex', justifyContent: 'center'}} className="grid grid-cols-1 md:grid-cols-12 items-center my-24 md:ml-36">
         {/* 3 Span Left */}
-        <div className="col-span-3 space-y-32">
+        <div className="col-span-3 md:space-y-32">
           <div>
             <div className="w-[100px] h-[100px] mb-4 rounded-lg border-4 border-white shadow-lg bg-[#F2F2F2] p-7 flex justify-center items-center  ">
                <BsCarFrontFill className="text-2xl text-[#ea580c] "/>
@@ -54,7 +54,7 @@ const KnowYourWorth = () => {
         </div>
 
         {/* 3 Span Right */}
-        <div className="col-span-3 space-y-32">
+        <div className="col-span-3 md:space-y-32">
           <div>
             <div className="w-[100px] h-[100px] mb-4 rounded-lg border-4 border-white shadow-lg bg-[#F2F2F2] p-7 flex justify-center items-center ">
              <SlBadge className="text-2xl text-[#ea580c] "/>

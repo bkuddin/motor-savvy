@@ -6,12 +6,30 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Auth/AuthProvider";
 import "./Navbar.css";
 
-export const Navbar = () => {
+export const Navbar = () => {  
   const { user, logOut } = useContext(AuthContext);
   // State for Mobile Menu Open & Close
   const [menuOpen, setMenuOpen] = useState(false);
   // State for Change nav color when Scroll Down
   const [color, setColor] = useState("transparent");
+
+  // Theme Daylight
+  const [theme, setTheme] = useState('light-theme')
+    const handleClick = () => {
+        console.log('click');
+        if (theme === 'dark-theme') {
+            setTheme('light-theme')
+        }
+        else {
+            setTheme('dark-theme')
+        }
+    }
+
+    useEffect(() => {
+        document.body.className = theme;
+    }, [theme])
+
+     // Theme Daylight End
 
   useEffect(() => {
     const changeColor = () => {
@@ -76,6 +94,9 @@ export const Navbar = () => {
           </li>
         )}
       </ul>
+
+      {/* Daylight Button */}
+      <button onClick={handleClick}>Day Light</button>
     </nav>
   );
 };

@@ -80,6 +80,17 @@ nav .menu span {
   border-radius: 0.2rem;
 }
 
+/* DayLight Theme */
+
+.dark-theme {
+  background-color: #f8e5da;
+  color: rgb(163, 169, 173);
+}
+
+.light-theme {
+  background-color: #eceaea;
+}
+
 @media (max-width: 480px) {
   nav .menu {
     display: flex;

@@ -1,10 +1,15 @@
+import { AiOutlineDollarCircle } from "react-icons/ai";
+import { BiSupport } from "react-icons/bi";
+import { BsCarFrontFill } from "react-icons/bs";
+import { ImPriceTags } from "react-icons/im";
 import { IoMdCheckmark } from "react-icons/io";
+import { SiEasyeda } from "react-icons/si";
+import { SlBadge } from "react-icons/sl";
 import carTop from "../../../assets/images/car-top.png";
 import cooling from "../../../assets/images/cool.jpg";
 import elec from "../../../assets/images/ele.png";
 import engine from "../../../assets/images/engine.jpg";
 import plusMore from "../../../assets/images/more.jpg";
-import search from "../../../assets/images/searchinventory.png";
 import trans from "../../../assets/images/trans.jpg";
 
 const KnowYourWorth = () => {
@@ -23,13 +28,13 @@ const KnowYourWorth = () => {
       <div style={{display: 'flex', justifyContent: 'center'}} className="grid grid-cols-1 md:grid-cols-12 items-center my-24">
         <div className="col-span-3">
           <div className="w-[100px] h-[100px] mb-4 rounded-lg border-4 border-white shadow-lg bg-[#F2F2F2] p-7 flex items-center ">
-            <img src={search} alt="" />
+             <BsCarFrontFill/>
           </div>
           <div className="w-[100px] h-[100px] mb-4 rounded-lg border-4 border-white shadow-lg bg-[#F2F2F2] p-7 flex items-center ">
-            <img src={search} alt="" />
+            <AiOutlineDollarCircle/>
           </div>
           <div className="w-[100px] h-[100px] mb-4 rounded-lg border-4 border-white shadow-lg bg-[#F2F2F2] p-7 flex items-center ">
-            <img src={search} alt="" />
+            <BiSupport/>
           </div>
           
         </div>
@@ -38,13 +43,13 @@ const KnowYourWorth = () => {
         </div>
         <div className="col-span-3">
           <div className="w-[100px] h-[100px] mb-4 rounded-lg border-4 border-white shadow-lg bg-[#F2F2F2] p-7 flex items-center ">
-            <img src={search} alt="" />
+           <SlBadge/>
           </div>
           <div className="w-[100px] h-[100px] mb-4 rounded-lg border-4 border-white shadow-lg bg-[#F2F2F2] p-7 flex items-center ">
-            <img src={search} alt="" />
+            <SiEasyeda/>
           </div>
           <div className="w-[100px] h-[100px] mb-4 rounded-lg border-4 border-white shadow-lg bg-[#F2F2F2] p-7 flex items-center ">
-            <img src={search} alt="" />
+            <ImPriceTags/>
           </div>
           
         </div>

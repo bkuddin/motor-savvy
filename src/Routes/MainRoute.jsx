@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Login from "../components/Auth/Login";
 import Register from "../components/Auth/Register";
 import MainLayout from "../components/Layouts/MainLayout";
-import MyCart from "../components/Pages/Cart/MyCart";
+import Cart from "../components/Pages/Cart/Cart";
 import Error from "../components/Pages/Error404/Error";
 import Home from "../components/Pages/Home/Home";
 import AddProduct from "../components/Pages/Product/AddProduct";
@@ -40,10 +40,12 @@ const MainRoute = createBrowserRouter([
         element: <ProductDetails/>,
         loader: ()=> fetch('http://localhost:5000/cars')
       },
+     
       {
         path: "/cart",
-        element: <MyCart/>,
-        loader: ()=> fetch('http://localhost:5000/users')
+        element: <Cart></Cart>,
+        loader: ()=> fetch('http://localhost:5000/carts')
+        
       },
       {
         path: "/sign-in",

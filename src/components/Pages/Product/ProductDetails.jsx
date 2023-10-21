@@ -12,13 +12,18 @@ const ProductDetails = () => {
     
   }, [id, loadedProducts]);
 
+  // Sending Data to Database as an Object
+  const {brand, image, model, type, ratings, price} = products;
+  const cart = {brand, image, model, type, ratings, price};
+
+
   const handleAddToCart = () =>{
-    fetch('http://localhost:5000/users',{
+    fetch('http://localhost:5000/carts',{
         method: 'POST',
         headers:{
             'content-type': 'application/json'
         },
-        body: JSON.stringify(products)
+        body: JSON.stringify(cart)
     })
     .then(res => res.json())
     .then(data => {

@@ -1,6 +1,8 @@
 import { useContext, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+
+import toast from "react-hot-toast";
 import Swal from "sweetalert2";
 import { AuthContext } from "./AuthProvider";
 
@@ -27,14 +29,28 @@ const Register = () => {
     const form = event.target;
     const name = form.name.value;
     const email = form.email.value;
-    const password = form.password.value;
+    const password = form.password.value;   
 
-    console.log("Selected gender:", gender);
+    if (!/^(?=.*[a-z]).{6,}$/.test(password)) {
+        // return toast.error("Password length must have 6 characters")
+       return setRegisterError("Password length must have 6 characters")
+    }
+
+    else if (!/(?=.*[!@#$%^&*])/.test(password)) {
+        return toast.error("Password must have a special character")
+    }
+    else if (!/(?=.*[A-Z])/.test(password)) {
+        return toast.error("Password must have a capital letter")
+    }
+    else if (!/(?=.*\d)/.test(password)) {
+        return toast.error("Password must have a number")
+    }
 
     // Firebase Register Auth
     registerUser(email, password)
       .then((result) => {
         console.log(result.user);
+        
         setRegisterSuccess("User created successfully");
 
         if(result.user){
@@ -181,6 +197,8 @@ const Register = () => {
             <button className="btn bg-[#2b1b9a] rounded-xl text-white hover:text-[#2b1b9a]">
               Register
             </button>
+            <p className="text-[#D2042D] mt-2">{registerError}</p>
+            {registerSuccess && <p className="text-green-700">{registerSuccess}</p>}
             <button onClick={handleGoogleSignIn} className="border-2 border-gray-200 w-1/2  mx-auto mt-7 flex justify-center items-center py-2 rounded-xl" >
               <FcGoogle className="mr-3"/> Sign With Google
             </button>
@@ -193,9 +211,9 @@ const Register = () => {
           </Link>
         </form>
 
-        <p className="text-[#D2042D] mt-2">{registerError}</p>
+        
 
-        {registerSuccess && <p className="text-green-700">{registerSuccess}</p>}
+       
       </div>
     </div>
   );

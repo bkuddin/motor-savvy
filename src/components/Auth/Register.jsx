@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "./AuthProvider";
 
@@ -112,7 +113,7 @@ const Register = () => {
               <span className="label-text text-xl">Gender</span>
             </label>
             <div className="flex space-x-4 ">
-              <div className="text-[#330066] font-semibold">
+              <div className="text-[#2b1b9a] font-semibold">
                 <input
                   className="mr-2"
                   type="radio"
@@ -123,7 +124,7 @@ const Register = () => {
                 />
                 Male
               </div>
-              <div className="text-[#330066] font-semibold">
+              <div className="text-[#2b1b9a] font-semibold">
                 <input
                   className="mr-2"
                   type="radio"
@@ -134,7 +135,7 @@ const Register = () => {
                 />
                 Female
               </div>
-              <div className="text-[#330066] font-semibold">
+              <div className="text-[#2b1b9a] font-semibold">
                 <input className="mr-2"
                   type="radio"
                   name="gender"
@@ -147,10 +148,14 @@ const Register = () => {
             </div>
           </div>
           <div className="form-control mt-6">
-            <button className="btn bg-[#330066] text-white hover:text-[#330066]">
+            <button className="btn bg-[#2b1b9a] text-white hover:text-[#2b1b9a]">
               Register
             </button>
           </div>
+
+          <Link to='/login'>
+              <p className="text-[#2b1b9a] text-center mt-6">Login Here</p>
+          </Link>
         </form>
         
           <p className="text-[#D2042D] mt-2">{error}</p>

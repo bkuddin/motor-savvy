@@ -52,7 +52,7 @@ export const Navbar = () => {
           <NavLink to="/sign-up">Sign Up</NavLink>
         </li>
         <li className="bg-[#2B1B9A] rounded-lg  ">
-          <NavLink className="text-white " to="/sign-in">Sign In</NavLink>
+          <NavLink className="text-white " to="/login">Sign In</NavLink>
         </li>
       </ul>
     </nav>

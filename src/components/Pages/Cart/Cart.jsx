@@ -48,8 +48,8 @@ const Cart = () => {
     <div className="px-20">
       <div className="container mt-40">
         <table className="w-full flex flex-row flex-no-wrap sm:bg-white overflow-hidden sm:shadow-lg my-5">
-          <thead className="text-white">
-            <tr className="bg-[#2b1b9a] flex flex-col flex-no wrap sm:table-row   mb-2 sm:mb-0">
+          <thead className="text-white ">
+            <tr className="bg-[#2b1b9a] flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0 ">
               <th className="p-3 text-left">No</th>
               <th className="p-3 text-left">Product</th>
               <th className="p-3 text-left">Brand</th>

@@ -48,7 +48,7 @@ const MainRoute = createBrowserRouter([
         
       },
       {
-        path: "/sign-in",
+        path: "/login",
         element: <Login/>,
       },
       {

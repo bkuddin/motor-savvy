@@ -1,8 +1,9 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
 
 const Login = () => {
-  const { signInUser } = useContext(AuthContext);
+  const { user, signInUser } = useContext(AuthContext);
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -39,11 +40,13 @@ const Login = () => {
         console.log(error);
       });
   };
+
+     
   return (
     <div>
       <div className="min-h-screen mt-40">
         <div className="flex justify-center items-center">
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <div className="card flex-shrink-0 w-full max-w-sm border-2 border-gray-200 bg-base-100">
             <form onSubmit={handleLogin} className="card-body">
               <div className="form-control">
                 <label className="label">
@@ -77,6 +80,12 @@ const Login = () => {
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Login</button>
               </div>
+              <p>{user && 'Success'}</p>
+
+
+              <Link to="/sign-up">
+            <p className="text-[#2b1b9a] text-center mt-6">Sign Up Here</p>
+          </Link>
             </form>
           </div>
         </div>

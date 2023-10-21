@@ -1,9 +1,14 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { FcGoogle } from "react-icons/fc";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
 
 const Login = () => {
-  const { user, signInUser } = useContext(AuthContext);
+  const { user, signInUser, signInWithGoogle } = useContext(AuthContext);
+  const [loginError, setLoginError] = useState("");
+
+  const location = useLocation()
+  const navigate = useNavigate()
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -15,7 +20,8 @@ const Login = () => {
     signInUser(email, password)
       .then((result) => {
         console.log(result.user);
-
+          // Navigate after login
+        navigate(location.state? location.state : '/')
         const user = {
           email,
           lastLoggedAt: result.user?.metadata?.lastSignInTime,
@@ -38,8 +44,29 @@ const Login = () => {
       })
       .catch((error) => {
         console.log(error);
+        setLoginError(error.message);
+        
       });
   };
+
+  const handleGoogleSignIn = ()=>{
+    signInWithGoogle()
+    .then(result =>{
+      console.log(result.user);
+    //   userUpdate((name, photo)=>{
+
+    //   })
+
+      if(result.user){
+        navigate(location.state ? location.state: "/")
+      }
+
+    })
+    .then(error=>{
+      console.log(error);
+      
+    })
+}
 
      
   return (
@@ -82,11 +109,19 @@ const Login = () => {
               </div>
               <p>{user && 'Success'}</p>
 
+              <p className="text-[#D2042D] mt-2">{loginError}</p>
+
+              <button onClick={handleGoogleSignIn} className="border-2 border-gray-200 w-2/3  mx-auto mt-2 flex justify-center items-center py-2  rounded-xl" >
+              <FcGoogle className="mr-2"/> Sign With Google
+            </button>
+
 
               <Link to="/sign-up">
-            <p className="text-[#2b1b9a] text-center mt-6">Sign Up Here</p>
+            <p className="text-[#2b1b9a] text-center mt-4">Sign Up Here</p>
           </Link>
             </form>
+
+           
           </div>
         </div>
       </div>

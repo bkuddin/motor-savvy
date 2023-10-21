@@ -36,6 +36,10 @@ const Register = () => {
       .then((result) => {
         console.log(result.user);
         setRegisterSuccess("User created successfully");
+
+        if(result.user){
+            navigate(location.state ? location.state: "/")
+          }
         //  Send user to Database
         const createAt = result.user?.metadata?.creationTime;
         const users = { name, email, password, createAt, gender };
@@ -88,6 +92,7 @@ const Register = () => {
         })
         .then(error=>{
           console.log(error);
+          
         })
     }
 

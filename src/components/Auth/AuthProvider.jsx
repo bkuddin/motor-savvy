@@ -32,32 +32,40 @@ const AuthProvider = ({children}) => {
     const googleProvider = new GoogleAuthProvider();
 
     const signInWithGoogle = () =>{
-        
+        setLoading(true)
         return signInWithPopup(auth, googleProvider)
     }
 
     // Log Out
 
-    const logOut = () =>{       
+    const logOut = () =>{ 
+        setLoading(true)      
         signOut(auth)       
     }  
 
     // Update Profile for showing User Name and photo after login
 
     const userUpdate = (name, photo) => {
+        setLoading(true)
         return updateProfile(auth.currentUser, {
+            
             displayName: name, photoURL: photo
         })
 
     }
 
 
-    // Observer 
-    useEffect(()=>{
-        onAuthStateChanged(auth, (currentUser)=>{
-             setUser(currentUser);
-        })
-    }, [])
+     // for observing auth state change
+     useEffect(()=>{
+        const unSubscribe = onAuthStateChanged(auth, currentUser => {
+             console.log('Observing current user', currentUser);
+             setUser(currentUser)
+             setLoading(false)
+         })
+         return ()=>{
+             unSubscribe()
+         }
+     }, [])
 
 
     const userInfo = {user, loading, registerUser, signInUser, signInWithGoogle, userUpdate, logOut}

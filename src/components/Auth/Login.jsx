@@ -18,10 +18,16 @@ const Login = () => {
     console.log(email, password);
 
     signInUser(email, password)
-      .then((result) => {
-        console.log(result.user);
-          // Navigate after login
+      .then((result) => { 
+        if(result.user.emailVerified){
+            // Navigate after login
         navigate(location.state? location.state : '/')
+        }else{
+           alert('Please verify your email address')
+          
+        }
+        
+        // Sending Data to MongoDB
         const user = {
           email,
           lastLoggedAt: result.user?.metadata?.lastSignInTime,

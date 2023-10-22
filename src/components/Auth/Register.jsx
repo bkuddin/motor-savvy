@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 import { AuthContext } from "./AuthProvider";
 
 const Register = () => {
-  const { registerUser, signInWithGoogle} = useContext(AuthContext);
+  const { registerUser, verifyEmail, signInWithGoogle} = useContext(AuthContext);
   const [registerError, setRegisterError] = useState("");
   const [registerSuccess, setRegisterSuccess] = useState("");
   const [gender, setGender] = useState("");
@@ -49,9 +49,14 @@ const Register = () => {
     // Firebase Register Auth
     registerUser(email, password)
       .then((result) => {
-        console.log(result.user);
-        
+        console.log(result.user);        
         setRegisterSuccess("User created successfully");
+        // Send email for verification 
+        verifyEmail(result.user)
+        .then(() => {
+          alert('Email verification sent, Please verify your account!')
+          return
+      });
 
         if(result.user){
             navigate(location.state ? location.state: "/")

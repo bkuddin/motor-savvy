@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import logo from "../../../assets/images/motor-savvy-black.png";
+import logo from "../../../assets/images/motor-savvy-logo.png";
 
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
@@ -48,16 +48,17 @@ export const Navbar = () => {
       className="fixed left-0 top-0 w-full z-10 font-bold ease-in duration-300 px-20"
     >
       <Link to="/" className="title flex items-center">
-        <img className="w-1/4" src={logo} alt="" />
-        <p className="text-black">Motor Savvy</p>
+        <img className="w-1/4" src={logo} alt="" />      
       </Link>
       <div className="menu mr-5" onClick={() => setMenuOpen(!menuOpen)}>
         <span></span>
         <span></span>
         <span></span>
       </div>
+    
       <ul className={menuOpen ? "open" : ""}>
-        <li>
+
+      <li>
           <NavLink to="/">Home</NavLink>
         </li>
         <li>
@@ -66,15 +67,14 @@ export const Navbar = () => {
         <li>
           <NavLink to="/cart">My Cart</NavLink>
         </li>
-      </ul>
-      <ul className={menuOpen ? "open" : ""}>
+        
         <li>
           <NavLink to="/sign-up">Sign Up</NavLink>
         </li>
 
         {user ? (
           <ol className="flex justify-center items-center -mt-1">
-            <li className="mr-4">
+            <li className="">
               <button onClick={logOut}>Log Out</button>
             </li>
             <li>
@@ -88,15 +88,17 @@ export const Navbar = () => {
           </ol>
         ) : (
           <li className="bg-[#2B1B9A] rounded-lg  ">
-            <NavLink className="text-white " to="/login">
+            <NavLink className="text-white mr-2 " to="/login">
               Sign In
             </NavLink>
           </li>
         )}
+
+        <li>  {/* Daylight Button */}
+      <button onClick={handleClick}>Light</button></li>
       </ul>
 
-      {/* Daylight Button */}
-      <button onClick={handleClick}>Day Light</button>
+    
     </nav>
   );
 };

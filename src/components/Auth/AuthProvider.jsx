@@ -1,4 +1,4 @@
-import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendEmailVerification, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { createContext } from "react";
 // Context
 export const AuthContext = createContext(null)
@@ -18,6 +18,12 @@ const AuthProvider = ({children}) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
         
+    }
+
+    // Send Email Verification 
+
+    const verifyEmail = () =>{
+        return sendEmailVerification(auth.currentUser)
     }
 
     // Login User 
@@ -58,8 +64,13 @@ const AuthProvider = ({children}) => {
      // for observing auth state change
      useEffect(()=>{
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
-             console.log('Observing current user', currentUser);
-             setUser(currentUser)
+             if(currentUser.emailVerified){
+                setUser(currentUser)
+             }else{
+                alert('Please verify your email address')
+             }
+            
+             
              setLoading(false)
          })
          return ()=>{
@@ -68,7 +79,7 @@ const AuthProvider = ({children}) => {
      }, [])
 
 
-    const userInfo = {user, loading, registerUser, signInUser, signInWithGoogle, userUpdate, logOut}
+    const userInfo = {user, loading, registerUser, verifyEmail, signInUser, signInWithGoogle, userUpdate, logOut}
     return (
         <AuthContext.Provider value={userInfo}>
             {children}

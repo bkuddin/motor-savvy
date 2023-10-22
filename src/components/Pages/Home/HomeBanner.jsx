@@ -35,7 +35,7 @@ const HomeBanner = () => {
             src={CarPhoto}
             alt=""
           />
-          <img className="h-[87vh]" src={HomePhotoBG} alt="" />
+          <img className="md:h-[87vh]" src={HomePhotoBG} alt="" />
         </div>
       </div>
     </div>

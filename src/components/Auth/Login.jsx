@@ -71,7 +71,7 @@ const Login = () => {
      
   return (
     <div>
-      <div className="min-h-screen mt-40">
+      <div className="min-h-screen pt-40">
         <div className="flex justify-center items-center">
           <div className="card flex-shrink-0 w-full max-w-sm border-2 border-gray-200 bg-base-100">
             <form onSubmit={handleLogin} className="card-body">
@@ -105,7 +105,7 @@ const Login = () => {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Login</button>
+                <button className="btn bg-[#2b1b9a] text-white hover:text-[#2b1b9a]">Login</button>
               </div>
               <p>{user && 'Success'}</p>
 

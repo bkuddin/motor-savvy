@@ -1,10 +1,10 @@
 import { ImLocation } from "react-icons/im";
 const HomeSearch = () => {
   return (
-    <div className="absolute bg-white px-8 py-3 shadow-lg z-[2] bottom-32 rounded-xl hidden md:block  ">
-      {/* navbar to search items */}
+    <div className="absolute left-20 bottom-16 bg-white px-8 py-3 shadow-lg z-[2]  rounded-xl hidden md:block">
+      {/* search items */}
 
-      <div className="navbar bg-base-100 w-[1100px]  ">
+      <div className="navbar bg-base-100 w-[1100px] ">
         <div className="navbar-center hidden md:flex">
           <ul className="menu menu-horizontal px-1 space-x-20">
             <li tabIndex={0}>
